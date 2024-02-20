@@ -2,32 +2,384 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+@import '../../components/ImageSlider.css';
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+
+
+.big-body{
+    margin: auto;
+    width: 100%;
+    min-width: 360px;
+    max-width: 420px;
+    background-color: #ffffff;
+}
+img{
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  
+  display: block !important;
+}
+.display2{
+  position: relative;
+    overflow: hidden;
+    margin-top: 48px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+}
+.dis-head{
+  position: initial;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
+  padding-right: 40px;
+  padding-bottom: 20px;
+}
+.dis-h1{
+  font-weight: 600;
+    font-size: 18px;
+    color: rgb(51, 51, 51);
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    line-height: 24px;
+}
+.dis-h2{
+  margin-top: 8px;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(153, 153, 153);
+    width: 100%;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow-wrap: break-word;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    line-height: 20px;
+}
+.product-dis{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 8px;
+  -webkit-box-align: start;
+  align-items: start;
+}
+.product-box{
+  width: 100%;
+    cursor: pointer;
+    display: flex;
+}
+.product{
+  width: 100%;
+    cursor: pointer;
+    display: flex;
+}
+.product:last-child{
+  margin-right: 0px;
+}
+.tit{
+  font-size: 2rem; /* Adjust the font size as needed */
+  font-weight: medium;
+  color: rgb(0, 208, 148);
+}
+.header-container{
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    height: 72px;
+    background-color: rgb(255, 255, 255);
+    z-index: 10;
+    border-bottom: 1px solid rgb(238, 238, 238);
+}
+.top-nav{
+    position: relative;
+    height: 100%;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    margin: 0px auto;
+    max-width: 960px;
+}
+.top-nav2{
+display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+.button-area{
+  display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+}
+  .category-container{
+ margin-top: 0px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+.main-body{
+  margin: auto;
+  width: 100%;
+  min-width: 360px;
+  max-width: 420px;
+  background-color: white;
+}
+.cat2{
+  width: 100%;
+    padding: 16px 0;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-row-gap: 24px;
+    grid-column-gap: 12px;
+    overflow: hidden;
+}
+.cat3{
+    cursor: pointer;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+}
+.cat3 img{
+  width:48px;
+  height: 48px;
+  display: flex;
+  min-height: auto;
+}
+.cat-txt{
+    width: 100%;
+    margin-top: 8px;
+    font-size: 11px;
+    letter-spacing: -0.3px;
+    text-align: center;
+    word-break: break-word;
+    overflow: hidden;
+    line-height: 15px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.menu-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-right: 1rem;
+  color:green;
+  
+  
+}
+.login-button {
+  background-color: #4299e1; /* Replace with your desired button background color */
+  color: #ffffff; /* Replace with your desired button text color padding: 0.5rem 1rem;*/
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: #3182ce; /* Replace with your desired button hover color */
+}
+.header-p{
+  font-size: 1rem;
+  cursor: pointer;
+  color: rgb(0, 208, 148);
+}
+.header-p::before{
+    display: inline-block;
+    content: "";
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-image: url(/common/icon-category.svg);
+    vertical-align: text-top
+}
+.arrow-button {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-right: 8px;
+    color: rgb(51, 51, 51);
+    text-align: center;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 14px;
+    letter-spacing: -0.5px;
+}
+
+.arrow-button:hover {
+  background-color: #45a049; /* Replace with your desired button hover color */
+}
+.logo{
+      cursor: pointer;
+    margin-right: 30px;
+    width: 105.6px;
+    height: 32px;
+}
+.search-nav{
+position: relative;
+margin-left: 90px;
+width: 335px
+
+}
+.search-input{
+  background-color: rgb(255, 255, 255);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.search-icon{
+  cursor: pointer;
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 20px;
+}
+.button {
+  position: absolute;
+  right: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 1rem;
+  background-color: #4CAF50;
+  border-radius: 50%;
+}
+
+.image {
+  width: 20px; /* Adjust the width as needed */
+  height: 20px; /* Adjust the height as needed */
+}
+
+.input {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 50px;
+  background-color: #2C3E50;
+  color: #ecf0f1;
+  border: none;
+  outline: none;
+}
+.icon-area{
+  display: none;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    justify-content: right;
+}
+.ico{
+  cursor: pointer;
+    padding: 12px;
+    display: none;
+}
+@media (max-width: 600px) {
+  .button-area{
+    display: none;
   }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .icon-area{
+    display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      width: 100%;
+      justify-content: right;
   }
+  .ico{
+    cursor: pointer;
+      padding: 12px;
+      display: all;
+      width:min-content;
+      
+  }
+  body{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: none;
+  }
+  .search-nav,
+  .login-button {
+    display: none;
+  }
+  .search-nav{
+    display: none;
+  }
+  .menu-icon{
+    display: none;
+  }
+  .header-p{
+    display: none;
+  }
+  .tit{
+    font-size: 28px;
+  }
+
+
+}
+
+
+@media (min-width: 960px) {
+ .logo{
+      margin-right: 16px;
+    width: 128.345px;
+    height: 25.093px;
+ }
+ .swipe-cont{
+      width: 960px;
+    overflow: visible;
+ }
+ .big-body{
+  max-width: none;
+    background-color: #ffffff;
+ }
+ .main-body{
+  min-height: calc(100vh - 380px);
+    max-width: none;
+ }
+ .category-container{
+  width: 960px;
+    margin-top: 40px;
+    padding: 0;
+ }
+ .cat2{
+  -webkit-align-items: flex-start;
+    -webkit-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    grid-row-gap: 0px;
+    grid-column-gap: 0px;
+ }
 }
